@@ -13,6 +13,7 @@ const hbs = exphbs.create({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', 'client/pages');
+
 app.use(express.static(__dirname + '/client'));
 
 app.get('/', (req, res) => {
