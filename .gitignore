@@ -1,0 +1,9 @@
+# Dependency directories
+node_modules/
+routes/
+
+#MySQL dump
+8marta.sql
+
+#sql
+sqlQueries

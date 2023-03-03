@@ -1,0 +1,31 @@
+<body>
+  <main class='main container'>
+    <h2 class='pageTitle'>Угадай препода по фразе</h2>
+    <hr />
+    <div class='wrapper'>
+
+      {{#each data}}
+        <div class='wrapperInner'>
+          <div class='phraseBlock'>
+            <h4 class='phraseTitle'>Фраза №{{this.id}}</h4>
+            <p class='blockText'>{{this.text}}</p>
+            <input
+              name='answerPrepod'
+              type='text'
+              class='input answerPrepod'
+              placeholder='Введи фамилию'
+            />
+            <p class='plusScore'></p>
+            <p class='correctAnswer d-none'>{{this.prepod}}</p>
+          </div>
+        </div>
+        <hr />
+      {{/each}}
+    </div>
+    <div class='d-flex justify-content-around w-100'>
+      <a href='/' class='btn btn-secondary mt-3 f-14 goBackBtn'>Назад</a>
+      <button class='btn btn-primary mt-3 f-14 checkAnswersBtn'>Подтвердить</button>
+    </div>
+  </main>
+  <script src='../assets/js/ugadaiPoFraze.js'></script>
+</body>

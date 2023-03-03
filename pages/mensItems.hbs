@@ -1,0 +1,70 @@
+<body>
+    <main class="main container">
+      <h2 class='pageTitle'>Мужские штучки</h2>
+      <hr>
+      <div class="wrapper">
+        {{#each data}}
+        <div class="wrInner">
+          <div class="questionBlock">
+            <h4 class="questionBlockTitle">Штучка №{{this.id}}</h4>
+            <div class="imgDiv">
+              <img src={{this.img}} alt="загрузка бандуры">
+            </div>
+         </div>
+        <form class="form formAnswers">
+          <div class="formInner">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                value={{this.var1}}
+              />
+              <label class="form-check-label" for="flexRadioDefault1">{{this.var1}}</label>
+            </div>
+            <div class="form-check right">
+                <div class="form-check-innerDiv right">
+                    <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  value={{this.var2}}
+                  />
+                  <label class="form-check-label" for="flexRadioDefault2">{{this.var2}}</label>
+                </div>
+            </div>
+            <div class="form-check">
+              <input
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              value={{this.var3}}
+            />
+            <label class="form-check-label" for="flexRadioDefault2">{{this.var3}}</label>
+            </div>
+            <div class="form-check right">
+              <div class="form-check-innerDiv right">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  value={{this.var4}}
+                />
+                <label class="form-check-label" for="flexRadioDefault2">{{this.var4}}</label>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="correctAnswer d-none">{{this.correct}}</div>
+        </div>   
+        <hr>
+        {{/each}}
+      </div>
+        <div class="d-flex justify-content-around w-100">
+          <a href="/" class="btn btn-secondary mt-3  f-14 goBackBtn">Назад</a>
+          <button class="btn btn-primary mt-3 f-14 checkAnswersBtn">Подтвердить</button>
+        </div>
+    </main>
+    <script src="../assets/js/mensItems.js"></script>
+  </body>
+</html>

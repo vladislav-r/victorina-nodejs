@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "img": "../assets/img/mensItems/carburator.png",
+    "var1": "Двигатель",
+    "var2": "Карбюратор",
+    "var3": "Коробка передач",
+    "var4": "Инжектор",
+    "correct": "Карбюратор"
+  },
+  {
+    "id": 2,
+    "img": "../assets/img/mensItems/silvia.webp",
+    "var1": "Silvia S15 2JZ-GTE 3.0",
+    "var2": "Skyline GT-R R34 RB26DETT 2.6",
+    "var3": "Mark II JZX90 1JZ-GTE 2.5",
+    "var4": "Гоночная желтая машина",
+    "correct": "Silvia"
+  }
+]

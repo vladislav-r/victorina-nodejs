@@ -1,0 +1,219 @@
+html,
+body {
+  height: 100%;
+}
+
+hr {
+  opacity: 0.15;
+  margin: 2rem 0;
+}
+.main {
+  max-width: 900px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.blockText {
+  font-size: 18px;
+}
+
+.pageTitle {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.wrapper {
+  flex: 1 1 auto;
+}
+.wrapperInner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ############################################################## */
+
+.formInner {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.form-check {
+  padding-left: 15%;
+  line-height: 1.2;
+  margin: 0 auto;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  width: 50%;
+  font-size: 18px;
+  height: 80px;
+}
+
+.form-check.right {
+  justify-content: end;
+}
+
+.form-check-innerDiv.right {
+  display: flex;
+  align-items: start;
+
+  width: 80%;
+}
+
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  margin-top: 0;
+  display: block;
+  margin-right: 10px;
+}
+
+.btn {
+  padding: 8px 20px;
+  font-size: 18px;
+}
+
+/* ############################################################## */
+
+.hintBlock {
+  margin-top: 30px;
+}
+.hintHeader {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.hintTitle {
+  margin-bottom: 0;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.hintText {
+  display: none;
+}
+
+.hintText.active {
+  display: block;
+}
+
+/* #################################################### */
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  overflow: hidden;
+}
+
+.loginFormInner {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginTitle {
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.loginName {
+  font-size: 20px;
+}
+
+.loginBtn {
+  margin-top: 40px;
+  padding: 10px 40px;
+  border-radius: 25px;
+  font-size: 18px;
+}
+
+/* ################################################################## */
+
+/* INDEX  */
+
+.gridBlock {
+  margin-top: 30px;
+}
+
+.col {
+  margin: 5px 5px;
+}
+
+.categoryTitle {
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+
+.categItemDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fefefe;
+  -webkit-box-shadow: 0 2px 2px 0 #9ec2f8;
+  -moz-box-shadow: 0 2px 2px 0 #9ec2f8;
+  box-shadow: 0 2px 2px 0 #9ec2f8;
+}
+
+.categItemDiv.visited {
+  background-color: #464646;
+  color: #797979;
+}
+
+.categItemLink {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  font-size: 17px;
+}
+
+/* ################################ */
+
+.phraseBlock {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  padding: 20px 0;
+}
+
+.answerPrepod {
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+/* #################### */
+
+.imgDiv {
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.imgDiv img {
+  width: 100%;
+  height: 100%;
+}
