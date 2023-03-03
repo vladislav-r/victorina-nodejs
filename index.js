@@ -1,6 +1,6 @@
 const express = require('express');
-const mysql = require('mysql2');
 const exphbs = require('express-handlebars');
+const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -12,8 +12,8 @@ const hbs = exphbs.create({
 
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
-app.set('views', 'pages');
-app.use(express.static(__dirname));
+app.set('views', 'client/pages');
+app.use(express.static(__dirname + '/client'));
 
 app.get('/', (req, res) => {
   res.render('index.hbs');
@@ -45,6 +45,10 @@ app.get('/mensItems', (req, res) => {
   res.render('mensItems.hbs', {
     data: json,
   });
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'pages', 'index.hbs'));
 });
 
 function start() {
