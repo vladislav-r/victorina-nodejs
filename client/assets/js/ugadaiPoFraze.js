@@ -12,7 +12,7 @@ checkAnswersbtn.addEventListener('click', () => {
     correctAnswer.forEach((corr) => {
       if (answ.value.trim() == corr.textContent && !answ.classList.contains('bg-success')) {
         answ.readOnly = true;
-        answ.classList.add('bg-success');
+        answ.classList.add('success');
         let currentScore = +localStorage.score;
         localCountScore += 10;
         currentScore += 10;
@@ -22,7 +22,4 @@ checkAnswersbtn.addEventListener('click', () => {
     });
   });
   alert(`Вы заработали ${localCountScore} очков`);
-  setTimeout(() => {
-    location.replace('/');
-  }, 500);
 });

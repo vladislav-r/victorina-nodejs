@@ -23,13 +23,11 @@ checkAnswersBtn.addEventListener('click', () => {
             localStorage.setItem('score', currentScore);
             // location.reload();
             console.log(currentScore);
+            answ.classList.remove('d-none');
           }
         }
       });
     });
   });
   alert(`Вы заработали ${localCountScore} очков`);
-  setTimeout(() => {
-    location.replace('/');
-  }, 500);
 });

@@ -7,13 +7,9 @@ const formCheckInput = document.querySelectorAll('.form-check-input');
 const score = document.querySelector('.score');
 
 let localCountScore = 0;
-
 checkAnswersBtn.addEventListener('click', () => {
-  console.log('1');
   formCheckInput.forEach((inp) => {
-    console.log('2');
     corrAnsws.forEach((answ) => {
-      console.log('3');
       if (inp.checked) {
         if (inp.value == answ.textContent) {
           let currentScore = +localStorage.score;
@@ -21,10 +17,14 @@ checkAnswersBtn.addEventListener('click', () => {
           currentScore += 20;
           localStorage.setItem('score', currentScore);
           answ.classList.remove('d-none');
+          // location.reload();
           console.log(currentScore);
         }
       }
     });
   });
   alert(`Вы заработали ${localCountScore} очков`);
+  // setTimeout(() => {
+  //   location.replace('/');
+  // }, 500);
 });

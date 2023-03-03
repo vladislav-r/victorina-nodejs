@@ -59,7 +59,11 @@ hr {
   align-items: start;
   width: 50%;
   font-size: 18px;
-  height: 80px;
+  padding-bottom: 60px;
+}
+
+.form-check.bottom {
+  padding-bottom: 20px;
 }
 
 .form-check.right {
@@ -204,6 +208,10 @@ hr {
   font-size: 20px;
 }
 
+.answerPrepod.success {
+  background: #29db05;
+}
+
 /* #################### */
 
 .imgDiv {
@@ -216,4 +224,13 @@ hr {
 .imgDiv img {
   width: 100%;
   height: 100%;
+}
+
+.correctAnswer {
+  transition: all 0.2s linear;
+  color: #29db05;
+  font-weight: 700;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 30px;
 }

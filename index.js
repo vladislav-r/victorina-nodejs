@@ -48,6 +48,13 @@ app.get('/mensItems', (req, res) => {
   });
 });
 
+app.get('/historyOfDate', (req, res) => {
+  const json = require('./db/historyOfDate.json');
+  res.render('historyOfDate.hbs', {
+    data: json,
+  });
+});
+
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'client', 'pages', 'index.hbs'));
 });

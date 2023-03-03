@@ -34,14 +34,11 @@ checkAnswersBtn.addEventListener('click', () => {
           localCountScore += 20;
           currentScore += 20;
           localStorage.setItem('score', currentScore);
-          // location.reload();
+          answ.classList.remove('d-none');
           console.log(currentScore);
         }
       }
     });
   });
   alert(`Вы заработали ${localCountScore} очков`);
-  setTimeout(() => {
-    location.replace('/');
-  }, 500);
 });
