@@ -11,9 +11,3 @@ document.querySelector('.resetScore').addEventListener('click', () => {
     document.querySelector('.popupResetScoreOverlay').classList.add('active');
   }
 });
-
-// document.querySelectorAll('.categItemDiv').forEach((cat) => {
-//   cat.addEventListener('click', () => {
-//     cat.classList.add('visited');
-//   });
-// });

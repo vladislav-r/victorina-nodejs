@@ -3,21 +3,20 @@
     <h2 class='pageTitle'>Угадай препода по фразе</h2>
     <hr />
     <div class='wrapper'>
-
       {{#each data}}
         <div class='wrapperInner'>
           <div class='phraseBlock'>
-            <h4 class='phraseTitle'>Фраза №{{this.id}}</h4>
+            <h5 class='phraseTitle questionBlockTitle'>Фраза №{{this.id}}</h5>
             <p class='blockText'>{{this.text}}</p>
             <input
               name='answerPrepod'
               type='text'
               class='input answerPrepod'
               placeholder='Введи фамилию'
+              value=''
             />
-            <p class='plusScore'></p>
-            <p class='correctAnswer d-none'>{{this.prepod}}</p>
           </div>
+          <span class='correctAnswer d-none'>{{this.prepod}}</span>
         </div>
         <hr />
       {{/each}}

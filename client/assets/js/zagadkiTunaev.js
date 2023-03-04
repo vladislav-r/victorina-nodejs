@@ -20,7 +20,7 @@ const checkAnswersBtn = document.querySelector('.checkAnswersBtn');
 const wrappers = document.querySelectorAll('.wrInner');
 const corrAnsws = document.querySelectorAll('.correctAnswer');
 const formAnswers = document.querySelectorAll('.formAnswers');
-const formCheckInput = document.querySelectorAll('.form-check-input');
+const formCheckInput = document.querySelectorAll('.formRadio');
 
 const score = document.querySelector('.score');
 
@@ -31,9 +31,10 @@ checkAnswersBtn.addEventListener('click', (e) => {
     corrAnsws.forEach((answ) => {
       if (inp.checked) {
         if (inp.value == answ.textContent) {
+          console.log(inp.value);
           let currentScore = +localStorage.score;
-          localCountScore += 20;
-          currentScore += 20;
+          localCountScore += 40;
+          currentScore += 40;
           localStorage.setItem('score', currentScore);
           console.log(currentScore);
         }
@@ -41,7 +42,7 @@ checkAnswersBtn.addEventListener('click', (e) => {
       }
     });
   });
-  document.querySelector('.popupTitleScore').innerHTML = `Заработано: ${localCountScore}`;
+  document.querySelector('.popupTitleScore').innerHTML = `Заработано очков: ${localCountScore}`;
   document.querySelector('.popupOverlay').classList.add('active');
-  e.target.setAttribute('disabled', '');
+  e.target.disabled = true;
 });

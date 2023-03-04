@@ -2,10 +2,7 @@
   {
     "id": 1,
     "img": "",
-    "var1": "for i to n do",
-    "var2": "while x < 10 do",
-    "var3": "if x = 10 then",
-    "var4": "write ('str') after",
+    "vars": ["for i to n do", "while x < 10 do", "if x = 10 then", "write ('str') after"],
     "correct": "write"
   }
 ]

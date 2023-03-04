@@ -26,7 +26,7 @@ checkAnswersBtn.addEventListener('click', (e) => {
     });
     // });
   });
-  document.querySelector('.popupTitleScore').innerHTML = `Заработано: ${localCountScore}`;
+  document.querySelector('.popupTitleScore').innerHTML = `Заработано очков: ${localCountScore}`;
   document.querySelector('.popupOverlay').classList.add('active');
-  e.target.setAttribute('disabled', '');
+  e.target.disabled = true;
 });

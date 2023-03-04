@@ -55,6 +55,13 @@ app.get('/historyOfDate', (req, res) => {
   });
 });
 
+app.get('/memories', (req, res) => {
+  const json = require('./db/memories.json');
+  res.render('memories.hbs', {
+    data: json,
+  });
+});
+
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'client', 'pages', 'index.hbs'));
 });

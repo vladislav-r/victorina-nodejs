@@ -7,7 +7,7 @@ const formCheckInput = document.querySelectorAll('.form-check-input');
 const score = document.querySelector('.score');
 
 let localCountScore = 0;
-checkAnswersBtn.addEventListener('click', () => {
+checkAnswersBtn.addEventListener('click', (e) => {
   formCheckInput.forEach((inp) => {
     corrAnsws.forEach((answ) => {
       if (inp.checked) {
@@ -22,7 +22,7 @@ checkAnswersBtn.addEventListener('click', () => {
       answ.classList.remove('d-none');
     });
   });
-  document.querySelector('.popupTitleScore').innerHTML = `Заработано: ${localCountScore}`;
+  document.querySelector('.popupTitleScore').innerHTML = `Заработано очков: ${localCountScore}`;
   document.querySelector('.popupOverlay').classList.add('active');
-  e.target.setAttribute('disabled', '');
+  e.target.disabled = true;
 });

@@ -2,19 +2,25 @@
   {
     "id": 1,
     "img": "client/assets/img/mensItems/carburator.png",
-    "var1": "Двигатель",
-    "var2": "Карбюратор",
-    "var3": "Коробка передач",
-    "var4": "Инжектор",
+    "vars": ["Двигатель", "Карбюратор", "Коробка передач", "Инжектор", "Распредвал"],
     "correct": "Карбюратор"
   },
   {
     "id": 2,
     "img": "client/assets/img/mensItems/silvia.webp",
-    "var1": "Silvia S15 2JZ-GTE 3.0",
-    "var2": "Skyline GT-R R34 RB26DETT 2.6",
-    "var3": "Mark II JZX90 1JZ-GTE 2.5",
-    "var4": "Гоночная желтая машина",
+    "vars": [
+      "Silvia S15 2JZ-GTE 3.0",
+      "Skyline GT-R R34 RB26DETT 2.6",
+      "Mark II JZX90 1JZ-GTE 2.5",
+      "Гоночная желтая машина",
+      "Impreza WRX STI 3.0 Turbo"
+    ],
     "correct": "Silvia"
+  },
+  {
+    "id": 3,
+    "img": "client/assets/img/mensItems/bmw.jpg",
+    "vars": ["Инспектор", "Проректор", "ИК-порт", "Блютуз", "Туз"],
+    "correct": "Туз"
   }
 ]

@@ -6,52 +6,24 @@
         {{#each data}}
         <div class="wrInner">
           <div class="questionBlock">
-            <h4 class="questionBlockTitle">Штучка №{{this.id}}</h4>
+            <h5 class="questionBlockTitle">Штучка №{{this.id}}</h5>
             <div class="imgDiv">
               <img src={{this.img}} alt="загрузка бандуры">
             </div>
          </div>
         <form class="form formAnswers">
           <div class="formInner">
-            <div class="form-check">
+            {{#each this.vars}}
+            <div class="formItem">
               <input
-                class="form-check-input"
+                class="formRadio"
                 type="radio"
                 name="flexRadioDefault"
-                value={{this.var1}}
+                value={{this}}
               />
-              <label class="form-check-label" for="flexRadioDefault1">{{this.var1}}</label>
+              <label class="formLabel" for="flexRadioDefault1">{{this}}</label>
             </div>
-            <div class="form-check right">
-                <div class="form-check-innerDiv right">
-                    <input
-                  class="form-check-input"
-                  type="radio"
-                  name="flexRadioDefault"
-                  value={{this.var2}}
-                  />
-                  <label class="form-check-label" for="flexRadioDefault2">{{this.var2}}</label>
-                </div>
-            </div>
-            <div class="form-check bottom">
-              <input
-              class="form-check-input"
-              type="radio"
-              name="flexRadioDefault"
-              value={{this.var3}}
-            />
-            <label class="form-check-label" for="flexRadioDefault2">{{this.var3}}</label>
-            </div>
-            <div class="form-check right bottom">
-              <div class="form-check-innerDiv right">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="flexRadioDefault"
-                  value={{this.var4}}
-                />
-                <label class="form-check-label" for="flexRadioDefault2">{{this.var4}}</label>
-              </div>
+            {{/each}}
             </div>
           </div>
         </form>
