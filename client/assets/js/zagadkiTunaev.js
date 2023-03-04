@@ -8,8 +8,8 @@ setTimeout(() => {
       hintBlock.forEach((text) => {
         if (hint.children[1].textContent == text.children[1].textContent) {
           text.children[1].classList.toggle('active');
-          localStorage.score -= 10;
-          alert('Вычтено 10 очков');
+          localStorage.score -= 30;
+          hint.children[0].classList.add('d-none');
         }
       });
     });
@@ -25,7 +25,8 @@ const formCheckInput = document.querySelectorAll('.form-check-input');
 const score = document.querySelector('.score');
 
 let localCountScore = 0;
-checkAnswersBtn.addEventListener('click', () => {
+
+checkAnswersBtn.addEventListener('click', (e) => {
   formCheckInput.forEach((inp) => {
     corrAnsws.forEach((answ) => {
       if (inp.checked) {
@@ -34,11 +35,13 @@ checkAnswersBtn.addEventListener('click', () => {
           localCountScore += 20;
           currentScore += 20;
           localStorage.setItem('score', currentScore);
-          answ.classList.remove('d-none');
           console.log(currentScore);
         }
+        answ.classList.remove('d-none');
       }
     });
   });
-  alert(`Вы заработали ${localCountScore} очков`);
+  document.querySelector('.popupTitleScore').innerHTML = `Заработано: ${localCountScore}`;
+  document.querySelector('.popupOverlay').classList.add('active');
+  e.target.setAttribute('disabled', '');
 });

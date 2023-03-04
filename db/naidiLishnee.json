@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "img": "",
     "var1": "for i to n do",
     "var2": "while x < 10 do",
     "var3": "if x = 10 then",

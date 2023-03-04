@@ -16,15 +16,13 @@ checkAnswersBtn.addEventListener('click', () => {
           localCountScore += 20;
           currentScore += 20;
           localStorage.setItem('score', currentScore);
-          answ.classList.remove('d-none');
-          // location.reload();
           console.log(currentScore);
         }
       }
+      answ.classList.remove('d-none');
     });
   });
-  alert(`Вы заработали ${localCountScore} очков`);
-  // setTimeout(() => {
-  //   location.replace('/');
-  // }, 500);
+  document.querySelector('.popupTitleScore').innerHTML = `Заработано: ${localCountScore}`;
+  document.querySelector('.popupOverlay').classList.add('active');
+  e.target.setAttribute('disabled', '');
 });

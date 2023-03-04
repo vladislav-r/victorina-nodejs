@@ -9,22 +9,22 @@ const score = document.querySelector('.score');
 let localCountScore = 0;
 
 checkAnswersBtn.addEventListener('click', () => {
-  console.log('1');
   formCheckInput.forEach((inp) => {
-    console.log('2');
     corrAnsws.forEach((answ) => {
-      console.log('3');
       if (inp.checked) {
         if (inp.value == answ.textContent) {
           let currentScore = +localStorage.score;
           localCountScore += 20;
           currentScore += 20;
           localStorage.setItem('score', currentScore);
-          answ.classList.remove('d-none');
+
           console.log(currentScore);
         }
       }
+      answ.classList.remove('d-none');
     });
   });
-  alert(`Вы заработали ${localCountScore} очков`);
+  document.querySelector('.popupTitleScore').innerHTML = `Заработано: ${localCountScore}`;
+  document.querySelector('.popupOverlay').classList.add('active');
+  e.target.setAttribute('disabled', '');
 });

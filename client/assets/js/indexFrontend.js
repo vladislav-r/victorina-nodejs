@@ -1,3 +1,4 @@
+//Если очки существуют - взять их, иначе установить со значением 0
 localStorage.getItem('score') ?? localStorage.setItem('score', 0);
 
 document.querySelector('.scoreCount').innerHTML = `Очки: ${localStorage.score ?? 0}`;
@@ -6,7 +7,13 @@ document.querySelector('.scoreCount').innerHTML = `Очки: ${localStorage.scor
 document.querySelector('.resetScore').addEventListener('click', () => {
   if (localStorage.score != '0') {
     localStorage.score = '0';
-    alert('Очки сброшены');
-    location.reload();
+    document.querySelector('.popupTitleResetScore').textContent = 'Очки сброшены';
+    document.querySelector('.popupResetScoreOverlay').classList.add('active');
   }
 });
+
+// document.querySelectorAll('.categItemDiv').forEach((cat) => {
+//   cat.addEventListener('click', () => {
+//     cat.classList.add('visited');
+//   });
+// });
