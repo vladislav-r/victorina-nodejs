@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 html,
 body {
   height: 100%;
@@ -24,6 +23,9 @@ hr {
   margin: 2rem 0;
 }
 
+/* #################################################### */
+/* #################################################### */
+
 .subTitle {
   padding: 13px 10px;
   background-color: red;
@@ -37,16 +39,55 @@ hr {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding-bottom: 30px;
 }
 
 .header {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 15px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.headerLeft {
+  width: 40%;
+
+  height: 100%;
+  padding-right: 10px;
+
+  display: flex;
+  align-items: center;
+}
+
+.headerLeftName {
+  font-weight: 700;
+}
+
+.headerRight {
+  display: flex;
+}
+
+.headerCategory {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.headerScore {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.scoreCount {
+  font-weight: 800;
 }
 
 .blockText {
@@ -63,6 +104,7 @@ hr {
 }
 
 .wrapper {
+  padding-top: 30px;
   flex: 1 1 auto;
 }
 .wrapperInner {
@@ -74,6 +116,65 @@ hr {
 }
 
 /* ############################################################## */
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  max-height: 300px;
+  height: 100%;
+  width: 100%;
+}
+
+.lofinFormTitleDiv {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+
+  height: 80px;
+}
+
+.loginInputGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.loginInputGroup label {
+  margin-bottom: 2px;
+}
+
+.loginFormNameInput {
+  width: 250px;
+  margin-top: 0;
+  padding: 10px 10px;
+  font-size: 18px;
+  outline: 0;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.loginFormNameInput:focus {
+  width: 280px;
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.loginFormLoginBtn {
+  margin-top: 10px;
+  padding: 10px 40px;
+  border-radius: 15px;
+  font-size: 18px;
+  max-width: 250px;
+  width: 90%;
+}
+
+/* ############################################################################ */
 
 .formInner {
   padding: 30px 0;
@@ -96,9 +197,13 @@ hr {
 }
 
 .formRadio {
+  cursor: pointer;
   width: 20px;
   height: 20px;
   margin-right: 8px;
+}
+.formRadio + label {
+  cursor: pointer;
 }
 
 .formLabel {
@@ -110,7 +215,7 @@ hr {
 /* ################################################################## */
 
 .btn {
-  padding: 8px 20px;
+  padding: 8px 29px;
   font-size: 18px;
 }
 
@@ -146,101 +251,94 @@ hr {
   display: block;
 }
 
-/* #################################################### */
-
-.loginForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  overflow: hidden;
-}
-
-.loginFormInner {
-  display: flex;
-  flex-direction: column;
-}
-
-.loginTitle {
-  font-size: 18px;
-  margin-bottom: 7px;
-}
-
-.loginName {
-  font-size: 20px;
-}
-
-.loginBtn {
-  margin-top: 40px;
-  padding: 10px 40px;
-  border-radius: 25px;
-  font-size: 18px;
-}
-
 /* ################################################################## */
 
 /* INDEX  */
 
-.gridBlock {
-  margin-top: 30px;
-}
-
-.col {
-  margin: 5px 5px;
-}
-
-.categoryTitle {
-  animation: rubberBand;
-  margin-top: 25px;
+.categoryTitleWrapper {
   margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.categoryTitle {
+  font-size: 30px;
+  margin-top: 25px;
+}
+.categorySubTitle {
+  font-size: 18px;
+
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
 }
 
 .categoriesItems {
   display: flex;
-  flex-wrap: wrap;
-  align-content: space-around;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-name: categoriesItems;
+}
+
+@keyframes categoriesItems {
+  0% {
+    margin-top: 100vh;
+  }
+
+  100% {
+    margin: 0;
+  }
 }
 
 .categItemDiv {
   width: 47%;
-  max-width: 200px;
-  height: 120px;
+  max-width: 280px;
+  height: 110px;
+
   margin: 10px 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-
-  border-radius: 10px;
-  border: 1px solid #9ec2f827;
-  background-color: #fefefe;
-  -webkit-box-shadow: 0 2px 2px 0 #9ec2f8;
-  -moz-box-shadow: 0 2px 2px 0 #9ec2f8;
-  box-shadow: 0px 2px 2px 0 #9ec2f8;
-  transition: all 0.2s linear;
-
+  border-radius: 20px;
   overflow: hidden;
+
+  border: 2px solid rgba(13, 110, 253, 1);
+  -webkit-box-shadow: 0px 5px 50px 2px rgba(13, 110, 253, 0.2);
+  -moz-box-shadow: 0px 5px 50px 2px rgba(13, 110, 253, 0.2);
+  box-shadow: 0px 3px 10px 0px rgba(13, 110, 253, 0.2);
 }
 
-.categItemDiv:hover {
-  box-shadow: 1px 2px 5px 0 #9ec2f8;
+.categItemDiv.center {
+  width: 97%;
+  max-width: 97%;
+  border: 2px solid rgba(0, 86, 255, 1);
+}
+
+.categItemDiv.center .categItemLink {
+  color: rgba(0, 86, 255, 1);
+  font-size: 20px;
 }
 
 .categItemLink {
+  padding: 0 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   width: 100%;
   text-decoration: none;
-  color: #000;
+  color: rgba(0, 86, 255, 1);
   font-size: 18px;
+  font-weight: 400;
+  transition: all 0.2s ease;
+}
+.categItemLink:hover {
+  background-color: rgba(13, 110, 253, 1);
+  color: #fff;
 }
 
 /* ################################ */
@@ -272,7 +370,7 @@ hr {
 .imgDiv {
   width: 100%;
   height: 100%;
-  max-width: 400px;
+  max-width: 300px;
   margin: 0 auto;
   margin-bottom: 20px;
 }

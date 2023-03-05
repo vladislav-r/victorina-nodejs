@@ -62,6 +62,10 @@ app.get('/memories', (req, res) => {
   });
 });
 
+app.get('/login', (req, res) => {
+  res.render('login.hbs');
+});
+
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'client', 'pages', 'index.hbs'));
 });
