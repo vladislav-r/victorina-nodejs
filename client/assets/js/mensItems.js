@@ -2,7 +2,7 @@ const checkAnswersBtn = document.querySelector('.checkAnswersBtn');
 const wrappers = document.querySelectorAll('.wrInner');
 const corrAnsws = document.querySelectorAll('.correctAnswer');
 const formAnswers = document.querySelectorAll('.formAnswers');
-const formCheckInput = document.querySelectorAll('.form-check-input');
+const formCheckInput = document.querySelectorAll('.formRadio');
 
 const score = document.querySelector('.score');
 
@@ -17,11 +17,15 @@ checkAnswersBtn.addEventListener('click', (e) => {
           localCountScore += 20;
           currentScore += 20;
           localStorage.setItem('score', currentScore);
-
-          console.log(currentScore);
+          inp.classList.add('correct');
+        } else {
+          inp.classList.add('notCorrect');
+        }
+      } else {
+        if (inp.value == answ.textContent) {
+          inp.classList.add('correct');
         }
       }
-      answ.classList.remove('d-none');
     });
   });
   document.querySelector('.popupTitleScore').innerHTML = `Заработано очков: ${localCountScore}`;

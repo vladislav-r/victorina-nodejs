@@ -9,13 +9,12 @@ let localCountScore = 0;
 checkAnswersbtn.addEventListener('click', (e) => {
   answerPrepodInput.forEach((answ) => {
     correctAnswer.forEach((corr) => {
-      if (answ.value.trim() == corr.textContent && !answ.classList.contains('bg-success')) {
+      if (answ.value.trim().toUpperCase() == corr.textContent.trim().toUpperCase()) {
         answ.classList.add('success');
         let currentScore = +localStorage.score;
         localCountScore += 10;
         currentScore += 10;
         localStorage.setItem('score', currentScore);
-        console.log(currentScore);
       }
       corr.classList.remove('d-none');
       answ.readOnly = true;

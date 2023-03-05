@@ -1,0 +1,34 @@
+{
+  "pages": {
+    "zagadkiTunaev": {
+      "score": 40,
+      "title": "Тюняев Production",
+      "href": "/zagadkiTunaev"
+    },
+    "historyOfDate": {
+      "score": 40,
+      "title": "История праздника",
+      "href": "/historyOfDate"
+    },
+    "ugadaiPoFraze": {
+      "score": 10,
+      "title": "Угадай препода",
+      "href": "/ugadaiPoFraze"
+    },
+    "memories": {
+      "score": 20,
+      "title": "Воспоминания",
+      "href": "/memories"
+    },
+    "naidiLishnee": {
+      "score": 10,
+      "title": "Найди лишнее",
+      "href": "/naidiLishnee"
+    },
+    "mensItems": {
+      "score": 40,
+      "title": "Мужские штучки",
+      "href": "/mensItems"
+    }
+  }
+}
