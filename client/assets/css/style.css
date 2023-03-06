@@ -5,9 +5,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
+  background-color: #fff;
 }
 
 h1,
@@ -26,16 +28,8 @@ hr {
 /* #################################################### */
 /* #################################################### */
 
-.subTitle {
-  padding: 13px 10px;
-  background-color: red;
-  color: #fff;
-  border-radius: 20px;
-  margin-left: 2px;
-}
-
 .main {
-  max-width: 900px;
+  max-width: 800px;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -72,6 +66,7 @@ hr {
 }
 
 .headerCategory {
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
@@ -86,8 +81,18 @@ hr {
   align-items: center;
   margin-right: 10px;
 }
+
 .scoreCount {
-  font-weight: 800;
+  font-weight: 700;
+}
+.scoreCount.inPage {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .blockText {
@@ -95,8 +100,46 @@ hr {
 }
 
 .pageTitle {
-  margin-top: 20px;
   text-align: center;
+  font-weight: 600;
+
+  -webkit-animation: pageTitle 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: pageTitle 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+.subTitle {
+  padding: 10px 7px;
+  background-color: red;
+  color: #fff;
+  border-radius: 20px;
+  margin-left: 2px;
+  font-size: 20px;
+}
+
+@-webkit-keyframes pageTitle {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pageTitle {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .questionBlockTitle {
@@ -202,8 +245,17 @@ hr {
   height: 20px;
   margin-right: 8px;
 }
+
 .formRadio + label {
   cursor: pointer;
+}
+.formRadio.notCorrect + label {
+  color: #e41429;
+  font-weight: 700;
+}
+.formRadio.correct + label {
+  color: #29db05;
+  font-weight: 700;
 }
 
 .formLabel {
@@ -219,10 +271,19 @@ hr {
   font-size: 18px;
 }
 
+.resetScoreBtn {
+  background: 0;
+  margin-left: 10px;
+  outline: none;
+}
+
 /* ############################################################## */
 
 .hintBlock {
+  width: 100%;
   margin-top: 30px;
+  display: flex;
+  justify-content: start;
 }
 .hintHeader {
   display: flex;
@@ -238,9 +299,10 @@ hr {
 
 .hintTitle span {
   position: absolute;
-  left: -25%;
+  left: 10%;
   bottom: -70%;
-  font-size: 14px;
+  font-size: 16px;
+  opacity: 0.5;
 }
 
 .hintText {
@@ -260,6 +322,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: transparent;
 }
 .categoryTitle {
   font-size: 30px;
@@ -267,10 +330,15 @@ hr {
 }
 .categorySubTitle {
   font-size: 18px;
-
   align-items: center;
   justify-content: space-between;
   text-align: left;
+}
+
+.categorySubTitle span {
+  /* color: #0d6efd; */
+  color: #d33342;
+  font-weight: 600;
 }
 
 .categoriesItems {
@@ -278,24 +346,31 @@ hr {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  animation-duration: 2s;
-  animation-delay: 0.5s;
+  animation-duration: 1.5s;
   animation-name: categoriesItems;
+  animation-timing-function: ease-out;
 }
 
+@-webkit-keyframes categoriesItems {
+  0% {
+    margin-top: 100vh;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
 @keyframes categoriesItems {
   0% {
     margin-top: 100vh;
   }
-
   100% {
-    margin: 0;
+    margin-top: 0;
   }
 }
 
 .categItemDiv {
   width: 47%;
-  max-width: 280px;
+  max-width: 240px;
   height: 110px;
 
   margin: 10px 5px;
@@ -318,14 +393,10 @@ hr {
   border: 2px solid rgba(0, 86, 255, 1);
 }
 
-.categItemDiv.center .categItemLink {
-  color: rgba(0, 86, 255, 1);
-  font-size: 20px;
-}
-
 .categItemLink {
   padding: 0 15px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -335,10 +406,30 @@ hr {
   font-size: 18px;
   font-weight: 400;
   transition: all 0.2s ease;
+  background-color: #fff;
+  animation-name: categItemLink;
+  animation-duration: 4s;
 }
 .categItemLink:hover {
   background-color: rgba(13, 110, 253, 1);
   color: #fff;
+}
+
+.categItemLink .categScoreDiv {
+  margin-top: 5px;
+}
+
+.categItemLink:visited {
+  color: #a7a7a7;
+}
+
+.categLoveLinkDiv {
+  display: flex;
+  align-items: center;
+}
+
+.categLoveLinkDiv span {
+  margin: 0 5px;
 }
 
 /* ################################ */

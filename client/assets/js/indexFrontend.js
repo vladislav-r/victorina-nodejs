@@ -1,7 +1,22 @@
+const resetScoreBtn = document.querySelector('.resetScoreBtn');
+const resetSuccessBtn = document.querySelector('.resetSuccessBtn');
+const popupTitleResetScore = document.querySelector('.popupTitleResetScore');
+const popupResetScoreOverlay = document.querySelector('.popupResetScoreOverlay');
+const popupVictoryOverlay = document.querySelector('.popupVictoryOverlay');
+const popupTitleVictory = document.querySelector('.popupTitleVictory');
+const popupSubTitleVictory = document.querySelector('.popupSubTitleVictory');
+
 //Если очки существуют - взять их, иначе установить со значением 0
 localStorage.getItem('score') ?? localStorage.setItem('score', 0);
-
 document.querySelector('.scoreCount').innerHTML = `${localStorage.score ?? 0}`;
+
+if (localStorage.score >= 600 && !localStorage.isVictory) {
+  popupVictoryOverlay.classList.add('active');
+  popupTitleVictory.textContent = 'Поздравляем!';
+  popupSubTitleVictory.textContent =
+    'Вы набрали достаточное количество очков и получаете наши подарки';
+  localStorage.isVictory = true;
+}
 
 if (localStorage.name) {
   const name = localStorage.name;
@@ -11,15 +26,13 @@ if (localStorage.name) {
 }
 
 // Сброс очков
-
-const resetScoreBtn = document.querySelector('.resetScoreBtn');
-const popupTitleResetScore = document.querySelector('.popupTitleResetScore');
-const popupResetScoreOverlay = document.querySelector('.popupResetScoreOverlay');
-
 resetScoreBtn.addEventListener('click', () => {
   if (localStorage.score != '0') {
-    localStorage.score = '0';
-    popupTitleResetScore.textContent = 'Очки сброшены';
+    popupTitleResetScore.textContent = 'Сбросить очки?';
     popupResetScoreOverlay.classList.add('active');
   }
+  resetSuccessBtn.addEventListener('click', () => {
+    localStorage.score = '0';
+    popupTitleResetScore.textContent = 'Очки сброшены';
+  });
 });
