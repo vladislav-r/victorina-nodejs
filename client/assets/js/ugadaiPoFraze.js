@@ -31,7 +31,8 @@ checkBtns.forEach((btn) => {
   });
 });
 
-document.querySelector('.btnSuccessForms').addEventListener('click', () => {
+document.querySelector('.btnSuccessForms').addEventListener('click', (e) => {
   document.querySelector('.popupTitleScore').innerHTML = `Заработано очков: ${localCountScore}`;
   document.querySelector('.popupOverlay').classList.add('active');
+  e.target.disabled = true;
 });

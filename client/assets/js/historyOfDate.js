@@ -13,8 +13,8 @@ checkAnswersBtn.addEventListener('click', (e) => {
       if (inp.checked) {
         if (inp.value == answ.textContent) {
           let currentScore = +localStorage.score;
-          localCountScore += 20;
-          currentScore += 20;
+          localCountScore += 40;
+          currentScore += 40;
           localStorage.setItem('score', currentScore);
           inp.classList.add('correct');
         } else {

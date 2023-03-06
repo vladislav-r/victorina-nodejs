@@ -30,5 +30,5 @@ checkAnswersBtn.addEventListener('click', (e) => {
   });
   document.querySelector('.popupTitleScore').innerHTML = `Заработано очков: ${localCountScore}`;
   document.querySelector('.popupOverlay').classList.add('active');
-  console.log(e);
+  e.target.disabled = true;
 });
