@@ -34,50 +34,55 @@ app.get('/zagadkiTunaev', (req, res) => {
 
 app.get('/ugadaiPoFraze', (req, res) => {
   const json = require('./db/ugadaiPoFraze.json');
+  const info = require('./db/pagesInfo.json');
   res.render('ugadaiPoFraze.hbs', {
     data: json,
-    score: 10,
+    info: info.pages.ugadaiPoFraze,
   });
 });
 
 app.get('/naidiLishnee', (req, res) => {
   const json = require('./db/naidiLishnee.json');
+  const info = require('./db/pagesInfo.json');
   res.render('naidiLishnee.hbs', {
     data: json,
-    score: 10,
+    info: info.pages.naidiLishnee,
   });
 });
 
 app.get('/mensItems', (req, res) => {
   const json = require('./db/mensItems.json');
+  const info = require('./db/pagesInfo.json');
   res.render('mensItems.hbs', {
     data: json,
-    score: 40,
+    info: info.pages.mensItems,
   });
 });
 
 app.get('/historyOfDate', (req, res) => {
   const json = require('./db/historyOfDate.json');
+  const info = require('./db/pagesInfo.json');
   res.render('historyOfDate.hbs', {
     data: json,
-    score: 40,
+    info: info.pages.historyOfDate,
   });
 });
 
 app.get('/memories', (req, res) => {
   const json = require('./db/memories.json');
+  const info = require('./db/pagesInfo.json');
   res.render('memories.hbs', {
     data: json,
-    score: 20,
+    info: info.pages.memories,
   });
 });
 
 app.get('/girls', (req, res) => {
   const json = require('./db/girls.json');
+  const info = require('./db/pagesInfo.json');
   res.render('girls.hbs', {
     data: json,
-    score: 10,
-    title: 'Девчонки',
+    info: info.pages.girls,
   });
 });
 
