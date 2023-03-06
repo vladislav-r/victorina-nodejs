@@ -30,7 +30,7 @@ checkAnswersBtn.addEventListener('click', (e) => {
   formCheckInput.forEach((inp) => {
     corrAnsws.forEach((answ) => {
       if (inp.checked) {
-        if (inp.value === answ.textContent) {
+        if (inp.value == answ.textContent) {
           let currentScore = +localStorage.score;
           localCountScore += 40;
           currentScore += 40;
