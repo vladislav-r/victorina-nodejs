@@ -23,6 +23,8 @@ if (localStorage.name) {
   document.querySelector('.headerLeftName').innerHTML = name;
 } else {
   window.location.replace('/login');
+  localStorage.isVictory = '';
+  localStorage.score = 0;
 }
 
 // Сброс очков

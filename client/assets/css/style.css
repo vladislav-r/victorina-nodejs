@@ -29,7 +29,7 @@ hr {
 /* #################################################### */
 
 .main {
-  max-width: 800px;
+  max-width: 700px;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -283,7 +283,8 @@ hr {
   width: 100%;
   margin-top: 30px;
   display: flex;
-  justify-content: start;
+  align-items: center;
+  justify-content: space-between;
 }
 .hintHeader {
   display: flex;
@@ -417,6 +418,7 @@ hr {
 
 .categItemLink .categScoreDiv {
   margin-top: 5px;
+  font-size: 14px;
 }
 
 .categItemLink:visited {
@@ -439,7 +441,7 @@ hr {
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 200px;
+
   padding: 20px 0;
 }
 
@@ -452,22 +454,11 @@ hr {
   outline: 0;
 }
 
-.answerPrepod.success {
+.answerPrepod.correct {
   background: #82fd6a;
 }
-
-/* #################### */
-
-.imgDiv {
-  width: 100%;
-  height: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-}
-.imgDiv img {
-  width: 100%;
-  height: 100%;
+.answerPrepod.notCorrect {
+  background: #e41429;
 }
 
 .correctAnswer {
@@ -476,4 +467,60 @@ hr {
   font-weight: 700;
   font-size: 22px;
   text-align: center;
+}
+
+/* #################### */
+
+.imgDiv {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.imgDiv.big {
+  max-width: 700px;
+}
+.imgDiv img {
+  width: 100%;
+  height: 100%;
+}
+
+.transparentBtn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  outline: none;
+  border: 0;
+  background: transparent;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  /* background-color: rgba(219, 9, 16, 0.3); */
+}
+
+.transparentBtn.img1 {
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.transparentBtn.img2 {
+  width: 30px;
+  height: 40px;
+  top: 36%;
+  left: 73%;
+  transform: translate(-50%, -50%);
+}
+
+.transparentBtn.found {
+  border: 3px solid rgb(32, 190, 0);
+  width: 40px;
+  height: 40px;
+}
+.transparentBtn.img2.found {
+  border: 3px solid rgb(32, 190, 0);
+  width: 40px;
+  height: 50px;
 }
