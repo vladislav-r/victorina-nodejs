@@ -10,7 +10,7 @@ const popupSubTitleVictory = document.querySelector('.popupSubTitleVictory');
 localStorage.getItem('score') ?? localStorage.setItem('score', 0);
 document.querySelector('.scoreCount').innerHTML = `${localStorage.score ?? 0}`;
 
-if (localStorage.score >= 600 && !localStorage.isVictory) {
+if (localStorage.score >= 350 && !localStorage.isVictory) {
   popupVictoryOverlay.classList.add('active');
   popupTitleVictory.textContent = 'Поздравляем!';
   popupSubTitleVictory.textContent =
