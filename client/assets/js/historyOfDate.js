@@ -18,10 +18,12 @@ checkAnswersBtn.addEventListener('click', (e) => {
           localStorage.setItem('score', currentScore);
           inp.classList.add('correct');
         } else {
+          inp.classList.remove('notCorrect');
           inp.classList.add('notCorrect');
         }
       } else {
         if (inp.value == answ.textContent) {
+          inp.classList.remove('notCorrect');
           inp.classList.add('correct');
         }
       }
